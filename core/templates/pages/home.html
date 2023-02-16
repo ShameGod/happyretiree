@@ -1,6 +1,6 @@
 <html>
     <body>
-        <h1>WELCOME TO HAPPY RETIREE</h1>
+        <h1>WELCOME TO HAPPY RETIREE {{userName}}</h1>
         {% if messages %}
              {% for message in messages %}
                 {{ message }}
@@ -15,13 +15,8 @@
 
         <button onclick="location.href = '../event/listevents';" id="myButton" class="float-left submit-button" >see events</button>
         <button onclick="location.href = '../event/listactivities';" id="myButton" class="float-left submit-button" >see activities</button>
+        <button onclick="location.href = '../event/createEvent';" id="myButton" class="float-left submit-button" >create Event</button>
 
 
-        <form name="create an event" method="get" action="createevent">
-            <input type="submit" 
-                               name="createEvent" 
-                               value="create an event" 
-                               class="submitbutton"/>
-        </form>
     </body>
 </html>

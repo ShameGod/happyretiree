@@ -8,6 +8,14 @@ class Activity(models.Model):
     location = models.CharField(max_length=200)
     def __str__(self) -> str:
         return self.name
+    class Meta:
+        indexes = [
+            models.Index(fields=['name']),
+        ]
+        constraints = [
+            models.UniqueConstraint(fields=["name"], name="uniqueName")
+        ]
+    
     
 
 class Event(models.Model):
@@ -19,3 +27,7 @@ class Event(models.Model):
     attendees= models.IntegerField
     def __str__(self) -> str:
         return self.name
+    class Meta:
+        indexes = [
+            models.Index(fields=['name']),
+        ]

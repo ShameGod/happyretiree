@@ -9,7 +9,8 @@ from . import utils
 def homepage(request):
     if utils.isLogged(request)==False:
         return utils.redirectWithError(request, "Please login")
-    return render(request, "pages/home.html")
+    user=get_user(request)
+    return render(request, "pages/home.html", {'userName': user.get_username})
 
 def signup_user(request):
     if utils.isLogged(request):

@@ -26,23 +26,23 @@
                                value="eventName"
                                style="width: 300px;"
                                autocomplete="off"/><br><br>
-                        <select id="activity"  name="activity">
+                        <select id="activityName"  name="activityName">
                             <option value="">--choose an activity--</option>
                             {% for activity in a %}
                                 <option value={{activity.name}}> {{activity.name}}</option>
                             {% endfor %}
                         </select>
                         <input type="date"
-                               name="created_on"
-                               id="last_name"
-                               class="textbox"
-                               value="last_name"
+                               name="date"
+                               id="date"
+                               class="date"
+                               value="date"
                                style="width: 300px;"
                                autocomplete="off"
                                /><br><br>
                         <input type="submit" 
                                name="btn" 
-                               value="signup" 
+                               value="createEvent" 
                                class="submitbutton"/>
                 	</form>
                 </center>
