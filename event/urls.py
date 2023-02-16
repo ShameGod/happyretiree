@@ -11,6 +11,6 @@ urlpatterns = [
     url('createActivity', controller.create_activity, name="create_activity"),
     url('myEvents', controller.list_my_events, name="list_my_events"),
     path('deleteEvent/<int:eventId>/', controller.delete_event, name="delete_event"),
-
+    path('updateEvent/<int:eventId>/', controller.update_event, name="update_event"),
     
 ]
