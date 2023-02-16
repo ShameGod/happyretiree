@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="theme-color" content="#99042E" charset="utf-8">
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="assets/css/style-login.css" />
+    </head>
+    <body>
+        <h1>Create activity</h1>
+       {% if messages %}
+             {% for message in messages %}
+                {{ message }}
+             {% endfor %}
+        {% endif %}
+        <div id="hideBox">
+            <div id="highBox">
+				<div id="logoBox">
+					<img src="assets/img/logo.png"/>
+				</div>
+                <center>
+                	<form name="createAcivity" method="post" action="">
+                        {% csrf_token %}
+                        <input type="text"
+                               name="activityName"
+                               id="activityName"
+                               class="textbox"
+                               value="activityName"
+                               style="width: 300px;"
+                               autocomplete="off"/><br><br>
+                        <input type="text"
+                               name="description"
+                               id="description"
+                               class="description"
+                               value="description of the activity"
+                               style="width: 700px;"
+                               autocomplete="off"
+                               /><br><br>
+                        <input type="text"
+                               name="location"
+                               id="location"
+                               class="location"
+                               value="location of the activity"
+                               style="width: 300px;"
+                               autocomplete="off"
+                               /><br><br>
+                        <input type="submit" 
+                               name="btn" 
+                               value="createAcivity" 
+                               class="submitbutton"/>
+                	</form>
+                </center>
+            </div>
+            <br>
+    </body>
+</html>
