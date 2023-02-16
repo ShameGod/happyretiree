@@ -39,3 +39,21 @@ def create_activity(request):
             )
         activity.save()
     return render(request,"event/createActivity.html")
+
+def list_my_events(request):
+    if utils.isLogged(request)==False:
+        return utils.redirectWithError(request, "Your session has expired")
+    user=get_user(request)
+    return render(request,"event/myEvents.html", {'events': Event.objects.filter(createdby=user)})
+
+def delete_event(request, eventId):
+    if utils.isLogged(request)==False:
+        return utils.redirectWithError(request, "Your session has expired")
+    user=get_user(request)
+    if Event.objects.get(pk=eventId).createdby==user:
+        try:
+            Event.objects.get(pk=eventId).delete()
+            return redirect("../../myEvents")
+        except:
+            raise Exception("Something went wrong when deleting the event")
+    return HttpResponseForbidden("This user didn't create this event so he is not authorized to edit it")

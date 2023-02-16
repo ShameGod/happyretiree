@@ -1,0 +1,26 @@
+<html>
+    <body>
+        <h1>My events</h1>
+        <table>
+            <tr>
+              <th>event name</th>
+              <th>activity</th>
+              <th>created by</th>
+              <th>created_on</th>
+              <th>date</th>
+              <th>action</th>
+            </tr>
+            {% for event in events %}
+                <tr>
+                    <td>{{event.name}}</td>
+                    <td>{{event.activity.name}}</td>
+                    <td>{{event.createdby}}</td>
+                    <td>{{event.created_on}}</td>
+                    <td>{{event.date}}</td>
+                    <td><button onclick="location.href = 'deleteEvent/{{event.pk}}';" id="myButton" class="float-left submit-button" >delete event</button></td>
+                </tr>
+            {% endfor %}
+            
+          </table>
+    </body>
+</html>

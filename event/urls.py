@@ -9,5 +9,8 @@ urlpatterns = [
     url('listactivities', controller.list_activities, name="list_activities"),
     url('createEvent', controller.create_event, name="create_event"),
     url('createActivity', controller.create_activity, name="create_activity"),
+    url('myEvents', controller.list_my_events, name="list_my_events"),
+    path('deleteEvent/<int:eventId>/', controller.delete_event, name="delete_event"),
+
     
 ]
