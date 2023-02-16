@@ -1,0 +1,27 @@
+<html>
+    <body>
+        <h1>WELCOME TO HAPPY RETIREE</h1>
+        {% if messages %}
+             {% for message in messages %}
+                {{ message }}
+             {% endfor %}
+        {% endif %}
+        <form name="logout" method="get" action="logout">
+            <input type="submit" 
+                               name="logout" 
+                               value="logout" 
+                               class="submitbutton"/>
+        </form>
+
+        <button onclick="location.href = '../event/listevents';" id="myButton" class="float-left submit-button" >see events</button>
+        <button onclick="location.href = '../event/listactivities';" id="myButton" class="float-left submit-button" >see activities</button>
+
+
+        <form name="create an event" method="get" action="createevent">
+            <input type="submit" 
+                               name="createEvent" 
+                               value="create an event" 
+                               class="submitbutton"/>
+        </form>
+    </body>
+</html>

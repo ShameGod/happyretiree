@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <table>
+            <tr>
+              <th>event name</th>
+              <th>activity</th>
+              <th>created by</th>
+              <th>created_on</th>
+              <th>date</th>
+            </tr>
+            {% for event in e %}
+                <tr>
+                    <td>{{event.name}}</td>
+                    <td>{{event.activity.name}}</td>
+                    <td>{{event.createdby}}</td>
+                    <td>{{event.created_on}}</td>
+                    <td>{{event.date}}</td>
+                </tr>
+            {% endfor %}
+            
+          </table>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="theme-color" content="#99042E" charset="utf-8">
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="assets/css/style-login.css" />
+    </head>
+    <body>
+       {% if messages %}
+             {% for message in messages %}
+                {{ message }}
+             {% endfor %}
+        {% endif %}
+        <div id="hideBox">
+            <div id="highBox">
+				<div id="logoBox">
+					<img src="assets/img/logo.png"/>
+				</div>
+                <center>
+                	<form name="createEvent" method="post" action="">
+                        {% csrf_token %}
+                        <input type="text"
+                               name="eventName"
+                               id="eventName"
+                               class="textbox"
+                               value="eventName"
+                               style="width: 300px;"
+                               autocomplete="off"/><br><br>
+                        <select id="activity"  name="activity">
+                            <option value="">--choose an activity--</option>
+                            {% for activity in a %}
+                                <option value={{activity.name}}> {{activity.name}}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="date"
+                               name="created_on"
+                               id="last_name"
+                               class="textbox"
+                               value="last_name"
+                               style="width: 300px;"
+                               autocomplete="off"
+                               /><br><br>
+                        <input type="submit" 
+                               name="btn" 
+                               value="signup" 
+                               class="submitbutton"/>
+                	</form>
+                </center>
+            </div>
+            <br>
+    </body>
+</html>

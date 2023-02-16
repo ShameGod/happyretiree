@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <table>
+            <tr>
+              <th>activity name</th>
+              <th>description</th>
+              <th>location</th>
+            </tr>
+            {% for activity in a %}
+                <tr>
+                    <td>{{activity.name}}</td>
+                    <td>{{activity.description}}</td>
+                    <td>{{activity.location}}</td>
+                </tr>
+            {% endfor %}
+            
+          </table>
+    </body>
+</html>

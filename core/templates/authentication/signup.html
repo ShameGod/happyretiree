@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="theme-color" content="#99042E" charset="utf-8">
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="assets/css/style-login.css" />
+    </head>
+    <body>
+       {% if messages %}
+             {% for message in messages %}
+                {{ message }}
+             {% endfor %}
+        {% endif %}
+        <div id="hideBox">
+            <div id="highBox">
+				<div id="logoBox">
+					<img src="assets/img/logo.png"/>
+				</div>
+                <center>
+                	<form name="signup" method="post" action="">
+                        {% csrf_token %}
+                        <input type="text"
+                               name="username"
+                               id="username"
+                               class="textbox"
+                               value="username"
+                               style="width: 300px;"
+                               autocomplete="off"
+                               onfocus="removeDefault(username)"
+                               onblur="setDefault(username)"/><br><br>
+                        <input type="email"
+                               name="email"
+                               id="email"
+                               class="textbox"
+                               value="email"
+                               style="width: 300px;"
+                               autocomplete="off"
+                               /><br><br>
+                        <input type="first_name"
+                               name="first_name"
+                               id="first_name"
+                               class="textbox"
+                               value="first_name"
+                               style="width: 300px;"
+                               autocomplete="off"
+                               /><br><br>
+                        <input type="last_name"
+                               name="last_name"
+                               id="last_name"
+                               class="textbox"
+                               value="last_name"
+                               style="width: 300px;"
+                               autocomplete="off"
+                               /><br><br>
+                        <input type="password"
+                               name="password"
+                               id="password"
+                               class="textbox"
+                               value="Password"
+                               style="width: 300px;"
+                               autocomplete="off"
+                               onfocus="removeDefault(password)"
+                               onblur="setDefault(password)"/><br><br>
+                        <input type="hidden" 
+                        	   name="md5password"/>
+                        <input type="submit" 
+                               name="btn" 
+                               value="signup" 
+                               class="submitbutton"/>
+                	</form>
+                </center>
+            </div>
+            <br>
+    </body>
+</html>
