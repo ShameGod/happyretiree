@@ -5,7 +5,6 @@ from django.urls import include, path
 urlpatterns = [
     path('event/', include("event.urls")),
     path('core/', include("core.urls")),
-    path('members/', include("django.contrib.auth.urls")),
     path('admin/', admin.site.urls),
 ]
 

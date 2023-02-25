@@ -1,0 +1,6 @@
+PLEASE_LOGIN="Please login"
+USERNAME_EXISTS= "the username already exists"
+EMAIL_EXISTS= "the email already exists"
+ACCOUNT_CREATED="Your account was created successfully"
+WRONG_CREDENTIALS="wrong username or password"
+LOGGED_OUT="you are logged out"

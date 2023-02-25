@@ -5,8 +5,8 @@ from django.shortcuts import *
 
 
 urlpatterns = [ 
-    url('listevents', controller.list_events, name="list_events"),
-    url('listactivities', controller.list_activities, name="list_activities"),
+    url('listEvents', controller.list_events, name="list_events"),
+    url('listActivities', controller.list_activities, name="list_activities"),
     url('createEvent', controller.create_event, name="create_event"),
     url('createActivity', controller.create_activity, name="create_activity"),
     url('myEvents', controller.list_my_events, name="list_my_events"),

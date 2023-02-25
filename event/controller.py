@@ -9,12 +9,12 @@ from django.utils import timezone
 def list_events(request):
     if utils.isLogged(request)==False:
         return utils.redirectWithError(request, "Your session has expired")
-    return render(request,"event/listevents.html", {'e': Event.objects.all()})
+    return render(request,"event/listEvents.html", {'e': Event.objects.all()})
 
 def list_activities(request):
     if utils.isLogged(request)==False:
         return utils.redirectWithError(request, "Your session has expired")
-    return render(request,"event/listactivities.html", {'a': Activity.objects.all()})
+    return render(request,"event/listActivities.html", {'a': Activity.objects.all()})
 
 def create_event(request):
     if utils.isLogged(request)==False:
@@ -38,7 +38,9 @@ def create_activity(request):
             location=request.POST["location"]
             )
         activity.save()
-    return render(request,"event/createActivity.html")
+        pass
+    else:
+        return render(request,"event/createActivity.html")
 
 def list_my_events(request):
     if utils.isLogged(request)==False:
@@ -53,7 +55,7 @@ def delete_event(request, eventId):
     if Event.objects.get(pk=eventId).createdby==user:
         try:
             Event.objects.get(pk=eventId).delete()
-            return redirect("../../myEvents")
+            return redirect("event/myEvents")
         except:
             raise Exception("Something went wrong when deleting the event")
     return HttpResponseForbidden("This user didn't create this event so he is not authorized to edit it")
